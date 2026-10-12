@@ -1,0 +1,78 @@
+---
+{
+  "kind": "validation",
+  "routes": {
+    "r-user-settings": "R — user settings",
+    "r-team-settings": "R — team settings"
+  },
+  "steps": [
+    {
+      "text": "The User selects an identity to add to the membership group",
+      "kind": "actor",
+      "actor": "user",
+      "entities": [],
+      "contexts": {
+        "r-user-settings": {
+          "place": "website::administration::user-settings"
+        },
+        "r-team-settings": {
+          "place": "website::administration::team-settings"
+        }
+      }
+    },
+    {
+      "text": "A valid dashboard session resolves to the ordinary role when this administration request is attempted.",
+      "kind": "condition",
+      "entities": [],
+      "contexts": {
+        "r-user-settings": {
+          "place": "website::administration::user-settings"
+        },
+        "r-team-settings": {
+          "place": "website::administration::team-settings"
+        }
+      }
+    },
+    {
+      "text": "The request returns Forbidden (403) before protected settings are disclosed or the requested administrative operation is performed.",
+      "kind": "product",
+      "actor": "user",
+      "entities": [],
+      "contexts": {
+        "r-user-settings": {
+          "place": "website::administration::user-settings"
+        },
+        "r-team-settings": {
+          "place": "website::administration::team-settings"
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "kind": "code",
+      "role": "implementation",
+      "target": "crates/liwan/src/web/routes/admin.rs"
+    },
+    {
+      "kind": "code",
+      "role": "implementation",
+      "target": "crates/liwan/src/app/core/users.rs"
+    }
+  ]
+}
+---
+
+# Add User to Team — access rejected
+
+## Trigger
+
+A valid dashboard session resolves to the ordinary User role when this administration request is attempted.
+
+## Outcome
+
+The request returns Forbidden (403) before protected settings are disclosed or the requested administrative operation is performed.
+
+## Edge cases
+
+- A missing or invalid dashboard session returns Unauthorized (401) before this operation; malformed browser credential pairs are cleared.

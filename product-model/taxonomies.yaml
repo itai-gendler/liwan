@@ -1,0 +1,19 @@
+{
+  "scenarioKinds": [
+    {
+      "id": "primary",
+      "name": "Primary",
+      "description": "An established successful outcome, including deliberate admission filtering."
+    },
+    {
+      "id": "validation",
+      "name": "Validation",
+      "description": "A refused entry, credential, scope or input with no refused mutation."
+    },
+    {
+      "id": "edge",
+      "name": "Edge",
+      "description": "An empty result, conflict, boundary or unavailable dependency with its observable outcome."
+    }
+  ]
+}
