@@ -60,4 +60,4 @@
 
 # Enabled provider registration is validated before saving and secret retention requires matching client identity
 
-Validate enabled configuration before persistence; preserve secret only under the implemented client-identity conditions; enforce scopes/claims/mapping limits and Google’s unsupported mapping behavior. Mapping group values are exact and unique; the configured list is bounded to 100 existing-Team mappings. OpenID Connect scopes/group claims and Microsoft tenant/Google Workspace restrictions follow their own registration shapes.
+Validate enabled configuration before persistence; preserve secret only under the implemented client-identity conditions; enforce scopes/claims/mapping limits and Google’s unsupported mapping behavior. Mapping group values are exact and unique; the configured list is bounded to 100 existing-Team mappings. OpenID Connect scopes/group claims and Microsoft tenant/Google Workspace restrictions follow their own registration shapes. A Provider other than OpenID Connect, Google or Microsoft is rejected.

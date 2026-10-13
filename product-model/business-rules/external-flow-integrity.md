@@ -33,6 +33,6 @@
 
 # External sign-in requires a single-use valid flow under unchanged policy
 
-Single-use bounded flow, state/nonce/PKCE/token checks, current-policy checks, return-destination checks, domain/tenant restrictions and observable provider/throttle failures. Pending flows are single-use, expire after ten minutes and are bounded to 256. Enabled policy fingerprint is checked before and after exchange. Local-provider password login remains available alongside external sign-in.
+Single-use bounded flow, state/nonce/PKCE/token checks, current-policy checks, return-destination checks, domain/tenant restrictions and observable provider/throttle failures. Pending flows are single-use, expire after ten minutes and are bounded to 256. Enabled policy fingerprint is checked before and after exchange. Local-provider password login remains available alongside external sign-in, and on its own while external sign-in is disabled.
 
 External authorization start is unavailable while initial setup is pending; public provider metadata also reports it unavailable then.

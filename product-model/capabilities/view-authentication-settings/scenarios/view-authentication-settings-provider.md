@@ -17,7 +17,7 @@
       }
     },
     {
-      "text": "The saved enabled provider is Microsoft.",
+      "text": "External sign-in is enabled with a saved Provider.",
       "kind": "condition",
       "entities": [],
       "contexts": {
@@ -27,7 +27,7 @@
       }
     },
     {
-      "text": "The saved policy and applicable provider registration, secret-configured status, callback address and initial-membership group mappings are shown; existing raw client secrets are not disclosed.",
+      "text": "The saved policy and the saved Provider's registration, secret-configured status, callback address and initial-membership group mappings are shown; existing raw client secrets are not disclosed.",
       "kind": "product",
       "actor": "administrator",
       "entities": [
@@ -41,6 +41,29 @@
             "Provider session reuse",
             "Default Team",
             "Team mappings"
+          ]
+        },
+        {
+          "entity": "openid-connect-registration",
+          "effect": "reads",
+          "facts": [
+            "Client ID",
+            "Secret configured",
+            "Callback URL",
+            "Issuer URL",
+            "Sign-in label",
+            "Additional scopes",
+            "Group claim"
+          ]
+        },
+        {
+          "entity": "google-registration",
+          "effect": "reads",
+          "facts": [
+            "Client ID",
+            "Secret configured",
+            "Callback URL",
+            "Workspace domain"
           ]
         },
         {
@@ -89,12 +112,22 @@
 }
 ---
 
-# View Authentication settings — microsoft
+# View Authentication settings — configured provider
 
 ## Trigger
 
-The saved enabled provider is Microsoft.
+External sign-in is enabled with a saved Provider.
 
 ## Outcome
 
-The saved policy and applicable provider registration, secret-configured status, callback address and initial-Team mappings are shown; existing raw client secrets are not disclosed.
+The saved policy and the saved Provider's registration, secret-configured status, callback address and initial-Team mappings are shown; existing raw client secrets are not disclosed.
+
+## Decision points
+
+### Registration shown
+
+Which registration fields are shown?
+
+- The saved Provider is OpenID Connect → its Issuer URL, Sign-in label, Additional scopes, Group claim and Team mappings are shown with the client fields.
+- The saved Provider is Google → its optional Workspace domain is shown with the client fields; Google has no Team mappings.
+- The saved Provider is Microsoft → its Tenant and Team mappings are shown with the client fields.

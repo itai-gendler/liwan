@@ -17,7 +17,7 @@
       }
     },
     {
-      "text": "Valid OIDC registration and policy are selected for saving.",
+      "text": "OpenID Connect is chosen as the provider, and its client fields and the policy are valid.",
       "kind": "condition",
       "entities": [],
       "contexts": {
@@ -89,7 +89,7 @@
 
 ## Trigger
 
-Valid OIDC registration and policy are selected for saving.
+OpenID Connect is chosen as the provider, and its client fields and the policy are valid.
 
 ## Outcome
 

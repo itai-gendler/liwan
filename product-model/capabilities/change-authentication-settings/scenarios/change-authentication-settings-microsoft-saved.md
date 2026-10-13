@@ -17,7 +17,7 @@
       }
     },
     {
-      "text": "Valid external client registration and policy are selected for saving.",
+      "text": "Microsoft is chosen as the provider, and its client fields and the policy are valid.",
       "kind": "condition",
       "entities": [],
       "contexts": {
@@ -86,7 +86,7 @@
 
 ## Trigger
 
-Valid Microsoft registration and policy are selected for saving.
+Microsoft is chosen as the provider, and its client fields and the policy are valid.
 
 ## Outcome
 

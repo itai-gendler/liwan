@@ -8,20 +8,20 @@
       "fact": "Provider"
     }
   ],
-  "takesEffect": "The saved Provider selects the applicable registration and reading/sign-in path when that operation starts.",
+  "takesEffect": "The saved Provider selects the registration kept when Authentication settings are saved, and the registration read or used when a reading or sign-in starts.",
   "stability": "Later operations use the current saved selection. In-flight external flows reject changed policy; existing external identity bindings remain.",
   "alternatives": [
     {
       "id": "openid-connect-registration",
-      "selectedWhen": "The saved Provider is OpenID Connect. External enabled policy separately gates provider sign-in; unsupported values are rejected and disabled external sign-in leaves local sign-in available."
+      "selectedWhen": "The saved Provider is OpenID Connect. Before any Provider is saved, OpenID Connect is the default."
     },
     {
       "id": "google-registration",
-      "selectedWhen": "The saved Provider is Google. External enabled policy separately gates provider sign-in; unsupported values are rejected and disabled external sign-in leaves local sign-in available."
+      "selectedWhen": "The saved Provider is Google."
     },
     {
       "id": "microsoft-registration",
-      "selectedWhen": "The saved Provider is Microsoft. External enabled policy separately gates provider sign-in; unsupported values are rejected and disabled external sign-in leaves local sign-in available."
+      "selectedWhen": "The saved Provider is Microsoft."
     }
   ],
   "references": [
